@@ -40,16 +40,6 @@ if [ -n "$PATH" ]; then
 fi
 export PATH
 
-# 如果是 bash/zsh 的话，source 一下 ~/.local/etc/function.sh
-if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
-    # run script for interactive mode of bash/zsh
-    if [[ $- == *i* ]] && [ -z "$_INIT_SH_NOFUN" ]; then
-        if [ -f "$HOME/.local/etc/function.sh" ]; then
-            . "$HOME/.local/etc/function.sh"
-        fi
-    fi
-fi
-
 # 如果是登陆模式，那么 source 一下 ~/.local/etc/login.sh
 if [ -n "$BASH_VERSION" ]; then
     if shopt -q login_shell; then
@@ -57,6 +47,9 @@ if [ -n "$BASH_VERSION" ]; then
             . "$HOME/.local/etc/login.sh"
         fi
     fi
+fi
+# 不用ZSH  ，注释掉，以后用的话可以打开
+:<<EOF
 elif [ -n "$ZSH_VERSION" ]; then
     if [[ -o login ]]; then
         if [ -f "$HOME/.local/etc/login.sh" ] && [ -z "$_INIT_SH_NOLOG" ]; then
@@ -64,4 +57,4 @@ elif [ -n "$ZSH_VERSION" ]; then
         fi
     fi
 fi
-
+EOF

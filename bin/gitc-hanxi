@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-name="涵曦"
-email="im.hanxi@gmail.com"
+name="xiaowen.yan"
+email="xiaowen.yan@iluvatar.ai"
 echo "Git info:"
 echo $name
 echo $email
