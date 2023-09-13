@@ -39,12 +39,13 @@ alias proxyon="setproxy on; . ~/.local/etc/config.sh"
 alias proxyoff="setproxy off; . ~/.local/etc/config.sh"
 
 # editor
-if command -v nvim > /dev/null 2>&1; then
-    alias vim=nvim
-    export VISUAL=nvim
-else
-    export VISUAL=vim
-fi
+#if command -v nvim > /dev/null 2>&1; then
+#    alias vim=nvim
+#    export VISUAL=nvim
+#else
+#    export VISUAL=vim
+#fi
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
 #alias svn=svn-color.py
