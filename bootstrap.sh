@@ -24,8 +24,8 @@ if [ -d config ]; then
     cd config
     git pull
 else
-	git clone git@github.com:trimagiccube/config.git
-    cd config
+	git clone git@github.com:trimagiccube/my_bash_config.git
+	cd my_bash_config
 fi
 
 cp -rf etc/* $ETC/
